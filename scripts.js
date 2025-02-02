@@ -9,26 +9,58 @@
  * 
  */
 
-/**
- *      Need to create a Table
- * 
- *  1. Create Columns <th>
- *  2. Create Rows <tr>
- *  3. Input information into the rows and columns <td>
- *  4. Append them to the table
- *  5. Functionality to remove objects from the table
- * 
- *      Does the table need the functionality to both create and delete data?
- *  */ 
-
-
-
-
 
 /**
  *      Need to create a Form
  * 
  *  1. When user clicks submit, add a new row to the table.
  *  2. Form will create a new table row with new Table Data to coincide with it.
- *  3. Append to the table.
+ *  3. Append to the table when submit button is pressed.
  */
+
+
+const formButton = document.getElementById("formSubmit");
+
+let number = 0
+
+formButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    // variables to hold form values
+
+    let gameName = document.getElementById("gameName").value
+    let gameScore = document.getElementById("gameScore").value
+    let gameDesc = document.getElementById("gameDesc").value
+
+    // create a tr node to append to form
+
+    let newTr = document.createElement("tr");
+
+    let gameNameCol = document.createElement("td");
+    let gameScoreCol = document.createElement("td");
+    let gameDescCol = document.createElement("td");
+
+    // create variable for number
+
+    let gameRank = document.createElement(`td`);
+    
+        gameRank.innerHTML = number + 1;
+
+        gameNameCol.innerHTML = gameName;
+        gameScoreCol.innerHTML = gameScore;
+        gameDescCol.innerHTML = gameDesc;
+
+
+    // Appending table datas to table row
+    newTr.append(gameRank);
+    newTr.append(gameNameCol);
+    newTr.append(gameScoreCol);
+    newTr.append(gameDescCol);
+
+    number++
+
+    document.getElementById("tBody").appendChild(newTr);
+
+    document.getElementById(`gameName`).value = ``;
+    document.getElementById(`gameScore`).value = ``;
+    document.getElementById(`gameDesc`).value = ``;
+})

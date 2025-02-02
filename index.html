@@ -3,16 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Top List Creator</title>
-    <style href="node_modules/bootstrap/dist/css/bootstrap.css"></style>
+    <title>Top Games List</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
 </head>
-<body>
+<body style="background-color:aquamarine;">
     <!--IMPORTANT!!! : Work on the styling AFTER finishing the Javascript!!-->
-    
+
     <header>
-
+        <h1 class="text-center">Top Games List</h1>
     </header>
+    
+    <table class="table table-dark table-striped">
+        <thead>
+            <th>#</th>
+            <th>Name</th>
+            <th>Score</th>
+            <th>Description</th>
+        </thead>
+        <tbody id="tBody">
+            <tr>
+                <td>ex.</td>
+                <td>Hollow Knight Silksong</td>
+                <td>10/10</td>
+                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit.</td>
+            </tr>
+        </tbody>
+    </table>
 
+    <form class="form">
+        <div>
+            <label for="gameName" class="form-label">Name</label>
+            <input type="text" class="form-control " id="gameName">
+        </div><br>
+        <div>
+            <label for="gameScore" class="form-label">Personal Score</label>
+            <input type="text" class="form-control" id="gameScore">
+        </div><br>
+        <div>
+            <label for="gameDesc" class="form-label">Description</label>
+            <input type="text" class="form-control" id="gameDesc">
+        </div><br>
+
+        <button type="submit" class="btn btn-dark form-control" id="formSubmit">Submit</button>
+
+    </form>
+
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
     <script src="scripts.js"></script>
 </body>
 </html>
